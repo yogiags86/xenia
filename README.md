@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="https://github.com/xenia-project/xenia/tree/master/assets/icon">
-        <img height="120px" src="https://raw.githubusercontent.com/xenia-project/xenia/master/assets/icon/128.png" />
+    <a href="https://github.com/yogiags86/xenondroid-emu/tree/master/assets/icon">
+        <img height="120px" src="https://raw.githubusercontent.com/yogiags86/xenondroid-emu/master/assets/icon/128.png" />
     </a>
 </p>
 

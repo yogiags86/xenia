@@ -1,4 +1,4 @@
-name: Build Cemu
+name: Build Xenia
 
 on:
   workflow_call:
@@ -68,17 +68,17 @@ jobs:
       run: |
         cmake -S . -B build ${{ env.BUILD_FLAGS }} -DCMAKE_BUILD_TYPE=${{ env.BUILD_MODE }} -DCMAKE_C_COMPILER=/usr/bin/clang-15 -DCMAKE_CXX_COMPILER=/usr/bin/clang++-15 -G Ninja -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja
         
-    - name: "Build Cemu"
+    - name: "Build Xenia"
       run: |
         cmake --build build
         
     - name: Prepare artifact
-      run: mv bin/Cemu_release bin/Cemu
+      run: mv bin/Xenia_release bin/Xenia
               
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: cemu-bin-linux-x64
+        name: xenia-bin-linux-x64
         path: ./bin/Cemu
 
   build-appimage:
@@ -240,13 +240,13 @@ jobs:
         -DMACOS_BUNDLE=ON \
         -G Ninja
         
-    - name: "Build Cemu"
+    - name: "Build Xenia"
       run: |
         cmake --build build
 
     - name: Prepare artifact
       run: |
-        mkdir bin/Cemu_app
+        mkdir bin/Cemp0u_app
         mv bin/Cemu_release.app bin/Cemu_app/Cemu.app
         mv bin/Cemu_app/Cemu.app/Contents/MacOS/Cemu_release bin/Cemu_app/Cemu.app/Contents/MacOS/Cemu
         sed -i '' 's/Cemu_release/Cemu/g' bin/Cemu_app/Cemu.app/Contents/Info.plist

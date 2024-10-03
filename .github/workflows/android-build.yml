@@ -37,7 +37,7 @@ jobs:
           ANDROID_STORE_FILE=$(pwd)/store.jks
           echo -e "keyStorePassword=$ANDROID_KEY_STORE_PASSWORD\nkeyAlias=$ANDROID_KEY_ALIAS\nstoreFile=$ANDROID_STORE_FILE\n" > keystore.properties
 
-      - name: Build Cemu for Android
+      - name: Build Xenia for Android
         run: |
           cd ./android/android_studio_project
           ./gradlew assembleRelease
